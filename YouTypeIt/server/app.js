@@ -25,7 +25,7 @@ var reScript = new RegExp('^\/script.js$','i');
 
 // setup for  API requests
 var cjHeaders = {
-    'Content-type' : 'application/vnd.collection+json'
+    'Content-type' : 'application/json' //vnd.collection+json'
 };
 var reAPIList = new RegExp('^\/api\/$', 'i');
 var reAPIItem = new RegExp('^\/api\/.*', 'i');
@@ -408,7 +408,7 @@ function sendHtmlResponse(req, res, body, code, lmDate) {
 
 function sendAPIResponse(req, res, body, code, lmDate) {
     res.writeHead(code, 
-        {"Content-Type" : "application/vnd.collection+json", 
+        {"Content-Type" : "application/json", 
         "ETag" : generateETag(body),
         "Last-Modified" : lmDate});
     res.end(body);

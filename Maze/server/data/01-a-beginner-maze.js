@@ -2,7 +2,7 @@
   "_id" : "five-by-five",
   "title" : "A Beginner's Maze",
   "cells" : {
-      "cell0":{"title":"Entrance", "doors":[1,1,1,0]},
+      "cell0":{"title":"Entrance Hallway", "doors":[1,1,1,0]},
       "cell1":{"title":"Hall of Knives", "doors":[1,1,1,0]},
       "cell2":{"title":"Library", "doors":[1,1,0,0]},
       "cell3":{"title":"Trophy Room", "doors":[0,1,0,1]},

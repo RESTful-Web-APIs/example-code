@@ -12,7 +12,7 @@ var thisPage = function() {
     g.moves = 0;
     g.links = [];
     g.mediaType = "application/vnd.amundsen.maze+xml";
-    g.startLink = "http://localhost:1337/";
+    g.startLink = ''; //"http://localhost:1337/";
     g.sorryMsg = 'Sorry, I don\'t understand what you want to do.';
     g.successMsg = 'Congratulations! you\'ve made it out of the maze!';
       
@@ -291,15 +291,6 @@ var thisPage = function() {
                 li.id = 'maze-'+(parseInt(i)+1).toString();
                 li.setAttribute('data-href',g.links[i].href);
                 li.appendChild(document.createTextNode(g.links[i].title));
-                /*
-                a = document.createElement('a');
-                a.href = g.links[i].href;
-                a.rel = g.links[i].rel;
-                a.title = g.links[i].title;
-                a.onclick = function(){return getMaze();};
-                a.appendChild(document.createTextNode(a.title));
-                li.appendChild(a);
-                */
                 elm.appendChild(li);
             }
         }

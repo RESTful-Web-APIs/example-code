@@ -27,7 +27,6 @@ else {
 function makeRequest(method, path) {
     var hdrs, options, pUrl;
 
-    console.log(path);
     pUrl = url.parse(path);
     
     hdrs = {
@@ -51,40 +50,45 @@ function makeRequest(method, path) {
         });
 
         res.on('end', function() {
-            var doc, nodes, i, x, links, href, flag, choices;
+            var doc, nodes, i, x, links, link, href, flag, choices;
 
             // collect hyperlinks from the response
             links = [];
             doc = new DOMParser().parseFromString(body, 'text/xml');
             nodes = doc.getElementsByTagName('link');
             for(i=0, x=nodes.length; i<x; i++) {
-                links.push({'rel':nodes[i].getAttribute('rel'), 'href':nodes[i].getAttribute('href')});
+                links.push({'rel':nodes[i].getAttribute('rel'), 
+                  'href':nodes[i].getAttribute('href'), 
+                  'title':nodes[i].getAttribute('title')});
             }
 
             // look for the start and claim victory
-            href = findLink(links, 'start');
-            if(href) {
+            var link;
+            link = findLink(links, 'start');
+            if(link) {
                 m.moves = parseInt(Math.random()*12)+1;
                 console.log(m.winner.replace('{m}',m.moves));
                 return;
             }
             
             // try to find link to a maze
-            if(href===undefined) {
-                href = findLink(links, 'maze');
+            if(link===undefined) {
+                link = findLink(links, 'maze');
+                console.log('Starting the maze called: '+link.title + '...');
             }
 
             // try to find link to a collection
-            if(href===undefined) {
-                href = findLink(links, 'collection');
+            if(link===undefined) {
+                link = findLink(links, 'collection');
+                console.log('Found a collection of mazes...');
             }
 
             // i give up!
-            if(href===undefined) {
+            if(link===undefined) {
                 console.log(m.quitter);
                 return;
             }
-            makeRequest('GET',href);
+            makeRequest('GET',link.href);
         });
     });
 
@@ -100,7 +104,7 @@ function findLink(links,rel) {
 
     for(i=0, x=links.length; i<x; i++) {
         if(links[i].rel===rel) {
-            rtn = links[i].href;
+            rtn = links[i];
         }
     }
     return rtn;

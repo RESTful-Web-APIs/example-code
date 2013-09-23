@@ -162,6 +162,10 @@ function showCell(req, res, maze, cell) {
             }
         }
 
+        // hack to add up/down for demo
+        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','up');
+        // body += template.link.replace('{l}',root+'/'+maze+'/'+mov[i-1]).replace('{d}','down');
+
         // if there is an exit, add it
         if(z===ex) {
             body += template.link.replace('{l}',root+'/'+maze+'/999').replace('{d}','exit').replace('{t}',data.title);
