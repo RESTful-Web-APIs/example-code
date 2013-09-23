@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Messages</title>
+        <!-- optional styling to this site -->
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet" />
+    </head>
+    <body>
+      <div>
+        <h2>Messages</h2>
+        
+        <p>
+          Enter your message below:
+        </p>
+        
+        <form action="{@host}/messages" method="post">
+            <input type="text" name="message" value="" required="true" maxlength="6"/>
+            <input type="submit" value="Post" />
+        </form>
+
+        <div>
+          <p>
+            Here are some other messages, too:
+          </p>
+          {@messages}
+        </div>
+
+        <p class="links">
+          <a href="{@host}/">Home</a>
+        </p>
+        
+      </div>
+    </body>
+    <!-- optional enhancement -->
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="{@host}/script.js"></script>
+</html>

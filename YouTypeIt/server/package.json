@@ -1,0 +1,8 @@
+{
+    "name" : "ytiwpi-html",
+    "version" : "1.0.0",
+    "engines" : {
+        "node" : "0.8.x",
+        "npm" : "1.1.x"
+    }
+}

@@ -1,0 +1,11 @@
+i{
+    "name": "maze-xml-client-the-boaster",
+    "version": "0.0.1",
+    "dependencies": {
+        "xmldom": "0.1.x"
+    },
+    "engines": {
+        "node": "0.8.x",
+        "npm": "1.1.x"
+    }
+}

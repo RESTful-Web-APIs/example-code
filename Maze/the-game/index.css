@@ -1,0 +1,30 @@
+/* index.css 
+ * RWA (2013)
+ * 2012-10 (mca) 
+ */
+
+h1,h2,h3,h4,h5
+{
+  margin-bottom:0;
+}
+div#play-space {
+  width:600px;
+}
+div#history {
+  height:200px;
+  overflow:auto;
+  border: medium inset black;
+  background-color: black;
+  color:green;
+  font-family: monospace;
+  font-weight:bold;
+}
+div#display {
+  padding: .3em 0;
+}
+span.options,
+span.room{
+  font-weight:bold;
+  font-family: monospace;
+}
+

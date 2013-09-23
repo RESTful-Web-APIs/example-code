@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        Maze+XML interactive client
+        RWA (2013)
+        2012-10 (mca)
+    -->
+    <head>
+        <title>The Game</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="mozxpath.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </head>
+    <body>
+        <h1>The Game</h1>
+        <div id="play-space">
+            <form id="select-server" action="#" method="get" style="display:none;">
+                <fieldset>
+                    <legend>Which maze server?</legend>
+                    <input type="text" name="server" value="http://localhost:1337" />
+                    <input type="submit" value="Load">
+                </fieldset>
+            </form>
+            <div id="show-mazes" style="display:none;">
+                <h3>Select a maze:</h3>
+                <ol id="maze-list"></ol>
+                <form id="select-maze" action="#" method="get">
+                    <input type="text" name="maze-number" value="" />
+                    <input type="submit" value="Go" />
+                </form>
+            </div>
+            <div id="show-server" style="display:none;"></div>
+            <div id="history" style="display:none;"></div>
+            <div id="display" style="display:none;">
+                <span class="location">You are in the:</span>
+                <span class="room"></span>.<br />
+                <span class="prompt">You have the following options:</span>
+                <span class="options"></span>
+            </div>
+            <form id="interface" action="#" method="get" style="display:none;">
+                <fieldset>
+                    <legend>What would you like to do?</legend>
+                    <input type="text" name="move" value="">
+                    <input type="submit" value="Go">
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
+
