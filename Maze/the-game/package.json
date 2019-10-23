@@ -2,7 +2,7 @@
     "name": "maze-xml-client-the-game",
     "version": "0.0.1",
     "dependencies": {
-        "mime": "1.2.x"
+        "mime": "2.4.x"
     },
     "engines": {
         "node": "0.8.x",
